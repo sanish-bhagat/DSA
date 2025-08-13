@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//! TC is O(n * logn)
+//! SC is O(1)
+
 int minPlatform(vector<int> &arr, vector<int> &dep)
 {
     int n = arr.size();
@@ -43,4 +46,5 @@ int main()
     vector<int> dep = {910, 1200, 1120, 1130, 1900, 2000};
     cout << minPlatform(arr, dep);
     return 0;
+
 }
