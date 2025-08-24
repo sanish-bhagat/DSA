@@ -18,6 +18,7 @@ public:
 
         while (completed < n)
         {
+            // select the shortest burst time process among the ones that have arrived
             for (int i = 0; i < n; i++)
             {
                 if (arrival[i] <= currentTime && remainingTime[i] > 0)
@@ -84,4 +85,5 @@ int main()
     cout << "Average Waiting Time: " << ans[0] << endl;
     cout << "Average Turnaround Time: " << ans[1] << endl;
     return 0;
+
 }
