@@ -11,7 +11,7 @@ It includes well-structured folders covering each major topic.
 - Stacks and Queues
 - Trees (Binary Trees, BST, Heap)
 - Sorting and Searching algorithms
-- Recursion
+- Recursion and Backtracking
 - Hashing and HashMaps
 - Important coding interview problems
 
