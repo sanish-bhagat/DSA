@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// build the adjacency matrix for the jobs
+// build the adjacency matrix for the courses
 vector<vector<int>> constructAdj(int n, vector<pair<int, int>> &prerequisites)
 {
     vector<vector<int>> adj(n);
@@ -20,18 +20,18 @@ bool dfs_cycle(int node, vector<vector<int>> &adj, vector<bool> &vis, vector<boo
     if (vis[node])
         return false;
 
-    // mark the curr job as visited and include it in the curr dfs path
+    // mark the curr course as visited and include it in the curr dfs path
     vis[node] = onPath[node] = true;
 
-    // explore all the adjacent jobs
+    // explore all the adjacent courses
     for (auto adjNode : adj[node])
     {
-        // if curr adjacent job is in curr dfs path or it leads to any cycle -> return true, cycle detected
+        // if curr adjacent course is in curr dfs path or it leads to any cycle -> return true, cycle detected
         if (onPath[adjNode] || dfs_cycle(adjNode, adj, vis, onPath))
             return true;
     }
 
-    // exclude the curr job from the dfs path
+    // exclude the curr course from the dfs path
     return onPath[node] = false;
 }
 
@@ -40,13 +40,13 @@ bool dfs_cycle(int node, vector<vector<int>> &adj, vector<bool> &vis, vector<boo
 
 bool canFinish(int n, vector<pair<int, int>> &prerequisites)
 {
-    // build the adjacency matrix for the jobs
+    // build the adjacency matrix for the courses
     vector<vector<int>> adj = constructAdj(n, prerequisites);
 
-    // bool[], vis[] -> used for tracking visited jobs and onPath -> track jobs in curr dfs path
+    // bool[], vis[] -> used for tracking visited courses and onPath -> track courses in curr dfs path
     vector<bool> vis(n, false), onPath(n, false);
 
-    // iteratively traverse all the jobs
+    // iteratively traverse all the courses
     for (int i = 0; i < n; i++)
     {
         // if not visited and any cycle is detected, it means the prerequisites is not fulfilled -> return false
