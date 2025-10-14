@@ -33,7 +33,7 @@ void dfs(vector<vector<char>> &grid, int r, int c)
 }
 
 //! TC is O(n * m)
-//! SC is O(n * m)
+//! SC is O(1)
 
 int countIslands(vector<vector<char>> &grid)
 {
