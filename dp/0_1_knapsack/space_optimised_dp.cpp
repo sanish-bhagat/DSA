@@ -9,7 +9,7 @@ int knapsack(int W, vector<int> &val, vector<int> &wt)
     int n = val.size();
 
     // 1D dp[]
-    vector<int> dp(W + 1);
+    vector<int> dp(W + 1, 0);
 
     // take first i elements
     for (int i = 1; i <= n; i++)
