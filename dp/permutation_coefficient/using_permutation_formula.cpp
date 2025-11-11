@@ -6,13 +6,14 @@ using namespace std;
 
 int permutationCoeff(int n, int k)
 {
-    int P = 1;
+    const int mod = 1e9 + 7;
+    long long P = 1;
 
     // P(n, k) = n * (n - 1) * (n - 2) ... (n - k + 1)
     for (int i = 0; i < k; i++)
-        P *= (n - i);
+        P = (P * (n - i)) % mod;
 
-    return P;
+    return (int)P;
 }
 
 int main()
