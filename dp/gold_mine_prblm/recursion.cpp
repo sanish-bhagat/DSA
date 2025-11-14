@@ -18,7 +18,7 @@ int maxGoldRec(int x, int y, vector<vector<int>> &mat)
     // move to right lower cell
     int rightLower = maxGoldRec(x + 1, y + 1, mat);
 
-    // return the max gold collected from the three moves
+    // return the max gold collected from the three options
     return mat[x][y] + max(max(rightUpper, right), rightLower);
 }
 
