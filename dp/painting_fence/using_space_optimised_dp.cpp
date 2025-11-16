@@ -15,7 +15,7 @@ int countWays(int n, int k)
 
     // known values for n == 1 and n == 2
     // keep track of only the last two values 
-    int prev1 = k, prev2 = k * k;
+    int prev2 = k, prev1 = k * k;
 
     // iterate and compute the total ways
     for (int i = 3; i <= n; i++)
