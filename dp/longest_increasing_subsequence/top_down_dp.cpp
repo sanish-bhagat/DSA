@@ -22,6 +22,9 @@ int lisRec(vector<int> &arr, int idx, vector<int> &memo)
     return memo[idx] = mx;
 }
 
+//! TC is O(n * n)
+//! SC is O(n)
+
 int lis(vector<int> &arr)
 {
     int n = arr.size();
