@@ -20,6 +20,9 @@ int maxSumRec(vector<int> &arr, int i, int j, vector<vector<int>> &memo)
     return memo[i][j] = maxSumRec(arr, i + 1, j, memo);
 }
 
+//! TC is O(n * n)
+//! SC is O(n * n)
+
 int maxSumIS(vector<int> &arr)
 {
     int n = arr.size();
