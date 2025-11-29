@@ -33,7 +33,7 @@ int helper(int n, int k, vector<vector<int>> &memo)
     return memo[n][k] = res;
 }
 
-//! TC is O(n * k)
+//! TC is O(n * k * k)
 //! SC is O(n * k)
 
 int eggDrop(int n, int k)
