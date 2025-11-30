@@ -16,12 +16,13 @@ int maxSquareRec(int i, int j, vector<vector<int>> &mat, int &ans)
     if (mat[i][j] == 0)
         return 0;
 
-    // pick the largest possible square
+    // pick the largest possible square for the curr cell
     int len = 1 + min({right, down, diagonal});
 
     // pick the max length of the square sub-matrix
     ans = max(ans, len);
 
+    // return the largest possible sqaure length of the curr cell
     return len;
 }
 
