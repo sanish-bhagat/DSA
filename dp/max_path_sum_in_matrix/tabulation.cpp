@@ -23,7 +23,7 @@ int maximumPath(vector<vector<int>> &mat)
             // for every cell, we can come from the following three directions
             int up = dp[i - 1][j];
             int left = (j > 0) ? dp[i - 1][j - 1] : 0;
-            int right = (j < m) ? dp[i - 1][j + 1] : 0;
+            int right = (j < m - 1) ? dp[i - 1][j + 1] : 0;
 
             // pick up the max of all the three moves and include in the curr path
             dp[i][j] = mat[i][j] + max({up, left, right});
