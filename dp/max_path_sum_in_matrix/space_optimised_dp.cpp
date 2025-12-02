@@ -33,7 +33,7 @@ int maximumPath(vector<vector<int>> &mat)
         prev = curr;
     }
 
-    // max sum of path is stored in the last row
+    // max sum of path is stored in the last row 
     return *max_element(prev.begin(), prev.end());
 }
 
