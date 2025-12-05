@@ -40,13 +40,12 @@ int MinimumCost(int cost[], int n, int W)
     {
         for (int j = 1; j <= W; j++)
         {
-            // capacity of bag is less than the weight of th curr item
-            if (wt[i - 1] > j)
-                minCost[i][j] = minCost[i - 1][j];
+            // exclude the curr item
+            minCost[i][j] = minCost[i - 1][j];
 
             // get the min cost by either excluding or including the curr item
-            else
-                minCost[i][j] = min(minCost[i - 1][j], val[i - 1] + minCost[i][j - wt[i - 1]]);
+            if (wt[i - 1] <= j && minCost[i][j - wt[i - 1]] != INT_MAX)
+                minCost[i][j] = min(minCost[i][j], val[i - 1] + minCost[i][j - wt[i - 1]]);
         }
     }
 
