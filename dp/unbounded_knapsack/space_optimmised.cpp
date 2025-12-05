@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//! TC is O(n * capacity)
+//! SC is O(capacity)
+
+int knapSack(int capacity, vector<int> &val, vector<int> &wt)
+{
+    int n = val.size();
+
+    // 1d dp[] to keep track of computed values
+    vector<int> dp(capacity + 1, 0);
+
+    // iterate through every item
+    for (int i = n - 1; i >= 0; i--)
+    {
+        for (int j = 1; j <= capacity; j++)
+        {
+            // if including the current item keeps the weight of the bag inside the curr capacity boundary ->
+            // include it and the value for the same item with updated capacity(we can take the item multiple times)
+            int take = 0;
+            if (wt[i] <= j)
+                take = val[i] + dp[j - wt[i]];
+
+            // exclude the curr item
+            int notake = dp[j];
+
+            // always pick the max profit value for the curr capacity
+            dp[j] = max(take, notake);
+        }
+    }
+
+    // return the max profit for the given capacity
+    return dp[capacity];
+}
+
+int main()
+{
+    vector<int> val = {1, 1}, wt = {2, 1};
+    int capacity = 3;
+    cout << knapSack(capacity, val, wt);
+}
