@@ -24,8 +24,8 @@ int knapsackRec(int i, int capacity, vector<int> &val, vector<int> &wt, vector<v
     return memo[i][capacity] = max(take, notake);
 }
 
-//! TC is O(n * n)
-//! SC is O(n * n)
+//! TC is O(n * capacity)
+//! SC is O(n * capacity)
 
 int knapSack(int capacity, vector<int> &val, vector<int> &wt)
 {
