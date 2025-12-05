@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//! TC is O(n * n)
-//! SC is O(n * n)
+//! TC is O(n * capacity)
+//! SC is O(n * capacity)
 
 int knapSack(int capacity, vector<int> &val, vector<int> &wt)
 {
