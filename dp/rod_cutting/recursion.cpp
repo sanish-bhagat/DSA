@@ -16,7 +16,7 @@ int cutRodRec(int i, vector<int> &price)
     return ans;
 }
 
-//! TC is O(n * n)
+//! TC is O(n ^ n)
 //! SC is O(n)
 
 int cutRod(vector<int> &price)
