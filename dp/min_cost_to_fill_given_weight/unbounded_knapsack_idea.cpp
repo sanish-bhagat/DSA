@@ -31,7 +31,7 @@ int MinimumCost(int cost[], int n, int W)
     for (int i = 0; i <= W; i++)
         minCost[0][i] = INT_MAX;
 
-    // fill 0th column with INF -> cost for every item having 0 weight = 0
+    // fill 0th column with 0 -> cost for every item having 0 weight
     for (int i = 1; i <= n; i++)
         minCost[i][0] = 0;
 
