@@ -27,8 +27,8 @@ int countWaysRec(int i, int n, vector<int> &points, vector<vector<int>> &memo)
     return memo[n][i] = take + notake;
 }
 
-//! TC is O(n * n)
-//! SC is O(n * n)
+//! TC is O(n)
+//! SC is O(3 * n)
 
 int countWays(int n)
 {
