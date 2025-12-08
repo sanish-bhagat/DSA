@@ -2,7 +2,8 @@
 using namespace std;
 
 int countWaysRec(int i, int n, vector<int> &points)
-{ // base case: total score is exactly == n, valid combination
+{ 
+    // base case: total score is exactly == n, valid combination
     if (n == 0)
         return 1;
 
@@ -22,7 +23,7 @@ int countWaysRec(int i, int n, vector<int> &points)
     return take + notake;
 }
 
-//! TC is O(n * n)
+//! TC is O(2 ^ n)
 //! SC is O(n)
 
 int countWays(int n)
