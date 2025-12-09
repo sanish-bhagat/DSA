@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define MOD 10000000;
+#define MOD 10000000
 
 //! TC is O(2 ^ h)
 //! SC is O(h)
