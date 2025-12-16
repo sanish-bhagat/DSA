@@ -32,7 +32,7 @@ string getLongestPal(string &s)
                     maxLen = currLen;
                 }
 
-                // expand the character in both directions
+                // expand the characters in both directions
                 low--;
                 high++;
             }
