@@ -43,6 +43,9 @@ int maxProfitRec(int i, vector<vector<int>> &jobs)
     return max(skip, take);
 }
 
+//! TC is O(2 ^ n)
+//! SC isw O(n)
+
 int maxProfit(vector<vector<int>> &jobs)
 {
     // sort the jobs based on their starting time
