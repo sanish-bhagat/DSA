@@ -9,11 +9,11 @@ int maxProfitRec(int i, int k, int buy, vector<int> &prices)
 
     int res = 0;
 
-    // we can buy, either buy or skip it
+    // we can buy, either buy(at price[i]) or skip it
     if (buy)
         res = max(maxProfitRec(i + 1, k, 0, prices) - prices[i], maxProfitRec(i + 1, k, 1, prices));
 
-    // we can sell, either sell or skip it
+    // we can sell, either sell(earn profit of price[i]) or skip it
     else
         res = max(prices[i] + maxProfitRec(i + 1, k - 1, 1, prices), maxProfitRec(i + 1, k, 0, prices));
 
