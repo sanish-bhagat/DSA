@@ -19,7 +19,7 @@ int getCountRec(int i, int j, int n)
     // recursively traverse in every direction
     for (auto d : dir)
     {
-        int x = d[0], y = d[1];
+        int x = i + d[0], y = j + d[1];
         ans += getCountRec(x, y, n - 1);
     }
 
