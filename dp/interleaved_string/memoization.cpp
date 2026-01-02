@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isInterleaveRec(string s1, string s2, string s3, int i, int j, vector<vector<int>> &memo)
+bool isInterleaveRec(string s1, string s2, string s3, int i, int j, vector<vector<bool>> &memo)
 {
     int k = i + j;
 
@@ -34,7 +34,7 @@ bool isInterleave(string s1, string s2, string s3)
         return false;
 
     // 2d memo[]
-    vector<vector<int>> memo(n + 1, vector<int>(m + 1, -1));
+    vector<vector<bool>> memo(n + 1, vector<bool>(m + 1, -1));
 
     return isInterleaveRec(s1, s2, s3, 0, 0, memo);
 }
