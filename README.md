@@ -13,6 +13,7 @@ It includes well-structured folders covering each major topic.
 - Graph
 - Sorting and Searching algorithms
 - Recursion and Backtracking
+- DP
 - Hashing and HashMaps
 - Important coding interview problems
 
