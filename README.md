@@ -16,6 +16,7 @@ It includes well-structured folders covering each major topic.
 - DP
 - Hashing and HashMaps
 - Important coding interview problems
+- POTD(GFG)
 
 ## 💻 Language
 
