@@ -6,7 +6,7 @@ using namespace std;
 
 void pushZerosToEnd(vector<int> &arr)
 {
-    // position for next zero
+    // position for next non-zero
     int j = 0;
 
     // move non-zero elements forward
