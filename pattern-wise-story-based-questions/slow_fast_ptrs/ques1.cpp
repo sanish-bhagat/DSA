@@ -27,7 +27,6 @@ public:
 
 bool isCycle(ListNode *head)
 {
-
     // slow moves 1 step and fast moves 2step forward
     ListNode *slow = head, *fast = head;
 
