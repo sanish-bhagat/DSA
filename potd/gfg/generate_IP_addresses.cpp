@@ -46,7 +46,7 @@ void generateIpRec(string &s, int index, string curr, int cnt, vector<string> &r
 }
 
 //! TC is O(n)
-//! SC is O(n)
+//! SC is O(ntop_))
 
 vector<string> generateIp(string &s)
 {
