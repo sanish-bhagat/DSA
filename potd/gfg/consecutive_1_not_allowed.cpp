@@ -20,6 +20,8 @@ int countStrings(int n)
     for (int i = n - 3; i >= 0; i--)
     {
         // curr state -> comes from (i + 1) and (i + 2) state
+        // either we can use 1 in the ith position -> then skip (i - 1)th position
+        // if we skip 1 -> consider 1 at (i-1)th position
         int curr = prev1 + prev2;
 
         // update the states
