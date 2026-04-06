@@ -1,93 +1,115 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Class to represent Huffman tree node
 class Node
 {
 public:
+    // frequency
     int data;
+
+    // smallest original index in subtree
+    int index;
+
+    // smallest original index in subtree
     Node *left, *right;
 
-    Node(int data)
+    // Leaf node
+    Node(int d, int i)
     {
-        this->data = data;
-        left = right = NULL;
+        data = d;
+        index = i;
+        left = right = nullptr;
+    }
+
+    // Internal node
+    Node(Node *l, Node *r)
+    {
+        data = l->data + r->data;
+
+        // important for tie-break
+        index = min(l->index, r->index);
+        left = l;
+        right = r;
     }
 };
 
-// custom comparator for min heap
+// Custom min heap for Node class
 class Compare
 {
 public:
     bool operator()(Node *a, Node *b)
     {
-        return a->data > b->data;
+        // smaller freq first
+        if (a->data != b->data)
+            return a->data > b->data;
+        // when freq are equal
+        return a->index > b->index;
     }
 };
 
-// preorder traversal for tree
-void preorder(Node *root, vector<string> &res, string curr)
+// Function to traverse tree in preorder
+// manner and push the Huffman representation
+// of each character.
+void preOrder(Node *root, vector<string> &ans, string curr)
 {
-    // base case
-    if (!root)
+    if (root == nullptr)
         return;
 
-    // push the curr string into the res
-    if (!root->left && !root->right)
+    // Leaf node represents a character.
+    if (root->left == nullptr && root->right == nullptr)
     {
-        res.push_back(curr);
+        // single character case
+        if (curr == "")
+            curr = "0";
+        ans.push_back(curr);
         return;
     }
 
-    // for left, decode with '0'
-    preorder(root->left, res, curr + '0');
-
-    // for right, decode with '1'
-    preorder(root->right, res, curr + '1');
+    preOrder(root->left, ans, curr + '0');
+    preOrder(root->right, ans, curr + '1');
 }
 
 //! TC is O(n)
 //! SC is O(n)
 
-vector<string> huffmanCodes(string &s, vector<int> &freq)
+vector<string> huffmanCodes(string &s, vector<int> f)
 {
-    int n = freq.size();
+    int n = s.length();
 
-    // min heap
+    // Min heap for Node class.
     priority_queue<Node *, vector<Node *>, Compare> pq;
-
-    // build minheap with the freq of chars
-    for (int f : freq)
+    for (int i = 0; i < n; i++)
     {
-        Node *temp = new Node(f);
-        pq.push(temp);
+        // include index
+        Node *tmp = new Node(f[i], i);
+        pq.push(tmp);
     }
 
-    // traverse min heap and build the huffman tree
+    // single character
+    if (n == 1)
+        return {"0"};
+
+    // Construct Huffman tree.
     while (pq.size() >= 2)
     {
-        // first min freq node
+        // Left node
         Node *l = pq.top();
         pq.pop();
 
-        // second min freq node
+        // Right node
         Node *r = pq.top();
         pq.pop();
 
-        // build a new node with the sum of freq of the first two min nodes &
-        // push it into the min heap
-        Node *newNode = new Node(l->data + r->data);
-        newNode->left = l;
-        newNode->right = r;
-
+        // internal node with freq + index
+        Node *newNode = new Node(l, r);
         pq.push(newNode);
     }
 
-    // get the preorder huffman coding of the string
     Node *root = pq.top();
-    vector<string> res;
-    preorder(root, res, "");
-
-    return res;
+    vector<string> ans;
+    preOrder(root, ans, "");
+    return ans;
 }
 
 int main()
