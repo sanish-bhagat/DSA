@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//! TC is O(n)
+//! SC is O(n)
+
 vector<int> reducePairs(vector<int> &arr)
 {
     vector<int> res;
