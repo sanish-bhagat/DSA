@@ -2,7 +2,7 @@
 using namespace std;
 
 //! TC is O(n)
-//! SC is O(n)
+//! SC is O(1)
 
 int minToggle(vector<int> &arr)
 {
