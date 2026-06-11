@@ -14,21 +14,18 @@ int findIndex(string &s)
     // count the total no. of closing brackets
     for (int i = 0; i < n; i++)
     {
-
         if (s[i] == ')')
             closeCnt++;
     }
 
     for (int i = 0; i <= n; i++)
     {
-
         // equal point found
         if (openCnt == closeCnt)
             return i;
 
         if (i < n)
         {
-
             // count opening brackets before next index
             if (s[i] == '(')
                 openCnt++;
