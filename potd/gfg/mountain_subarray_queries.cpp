@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//! TC is O(n + q)
+//! SC is O(n)
+
 vector<bool> processQueries(vector<int> &arr, vector<vector<int>> &queries)
 {
     int n = arr.size();
