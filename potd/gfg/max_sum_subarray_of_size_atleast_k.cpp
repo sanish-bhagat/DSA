@@ -37,7 +37,6 @@ int maxSumWithK(int k, vector<int> &arr)
 
 int main()
 {
-
     vector<int> arr = {-4, -2, 1, -3};
     int k = 2;
 
