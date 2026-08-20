@@ -1,8 +1,4 @@
-#include <climits>
-#include <iostream>
-#include <queue>
-#include <sstream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Node
