@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//! TC is O(n)
+//! SC is O(n)
+
 int minMoves(vector<int> &arr)
 {
     int n = arr.size();
