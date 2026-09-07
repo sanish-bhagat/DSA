@@ -15,7 +15,6 @@ int minCount(vector<int> &arr)
     // build the dp states
     for (int idx = n - 1; idx >= 0; idx--)
     {
-
         for (int incLast = -1; incLast < n; incLast++)
         {
             for (int decLast = -1; decLast < n; decLast++)
