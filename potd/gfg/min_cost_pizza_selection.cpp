@@ -5,7 +5,8 @@ using namespace std;
 //! SC is O(x)
 
 int minimumCost(int x, int s, int m, int l,
-                int cs, int cm, int cl) {
+                int cs, int cm, int cl)
+{
 
     // Compute DP up to the maximum useful area.
     int limit = x + l;
@@ -14,7 +15,8 @@ int minimumCost(int x, int s, int m, int l,
     dp[0] = 0;
 
     // Build minimum cost for every achievable area.
-    for (int i = 0; i <= limit; i++) {
+    for (int i = 0; i <= limit; i++)
+    {
 
         if (dp[i] == INT_MAX)
             continue;
@@ -38,7 +40,8 @@ int minimumCost(int x, int s, int m, int l,
     return res;
 }
 
-int main() {
+int main()
+{
     int x = 16;
     int s = 3, m = 6, l = 9;
     int cs = 50, cm = 150, cl = 300;
