@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//! TC is O(n)
+//! TC is O(n * logn)
 //! SC is O(1)
 
 int maxFrequency(vector<int> &arr, int k)
